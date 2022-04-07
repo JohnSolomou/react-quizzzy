@@ -1,0 +1,229 @@
+body {
+  background-color: rgb(122, 184, 148);
+
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.textwhite {
+  color: white;
+}
+
+.todo-list {
+  background-color: white;
+  margin: auto;
+  // width: 80%;
+  // font-family: "Pacifico", cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #efefef;
+  box-shadow:
+  /* The top layer shadow */ 0 1px 1px rgba(0, 0, 0, 0.15),
+    /* The second layer */ 0 10px 0 -5px #eee,
+    /* The second layer shadow */ 0 10px 1px -4px rgba(0, 0, 0, 0.15),
+    /* The third layer */ 0 20px 0 -10px #eee,
+    /* The third layer shadow */ 0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}
+.photo {
+  height: 200px;
+  width: 200px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* padding: 30px 20px 0; */
+  // width: 100%;
+  border-bottom: 1px solid #cecece;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  color: #333333;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+input[type="checkbox"]:focus {
+  outline: 0;
+}
+
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #08c7ad;
+  background-color: #08c7ad;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login
+  .container
+  #login-row
+  #login-column
+  #login-box
+  #login-form
+  #register-link {
+  margin-top: -85px;
+}
+div.row {
+  align-items: center;
+  min-width: 300px;
+}
+
+.color {
+  margin: 0 auto;
+  @include linearGradient(#0cadbd, #ddd);
+}
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.primary-color {
+  background-color: rgb(122, 184, 148);
+  color: white;
+}
+
+// body {
+//   font-family: sans-serif;
+//   overflow-x: hidden;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: rgb(122, 184, 148);
+//   line-height: 1.6;
+// }
+// p {
+//   margin: 0px 70px 0px 70px;
+// }
+.smlogo {
+  margin:auto
+  max-width: 10%;
+}
+.hero {
+  background-color: rgb(122, 184, 148);
+
+  color: #fff;
+  display: block;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+// .white {
+//   background-color: white;
+// }
+.btns {
+  float: right;
+  padding: 14px 16px;
+  background-color: rgb(122, 184, 148);
+  color: #fff;
+}
+// button:hover {
+//   background-color: rgb(155, 243, 192);
+// }
+// .btns a {
+//   color: #fff;
+//   text-decoration: none;
+// }
+
+// ul {
+//   list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+//   background-color: #333;
+// }
+
+// li {
+//   float: right;
+//   display: inline;
+//   margin-top: 10px;
+// }
+
+// li a {
+//   display: inline;
+//   text-align: center;
+//   padding: 14px 16px;
+//   text-decoration: none;
+//   color: #fff;
+//   background-color: rgb(122, 184, 148);
+// }
+
+svg {
+  display: block;
+}
+// .nav button {
+//   margin-top: 15px;
+// }
+// h1 .lside {
+//   margin-top: 90px;
+//   width: 46%;
+//   float: left;
+//   /* color: white; */
+// }
+// .lh {
+//   line-height: 01.6;
+// }
+
+.rside {
+  margin-right: 0;
+  float: right;
+  display: inline-block;
+  width: 36%;
+  background-color: rgb(122, 184, 148);
+}
+.container .move {
+  background-color: white;
+}
+.globe {
+  width: 25%;
+}
+footer {
+  text-align: center;
+  color: white;
+}
+
+// .question {
+//   background-color: rgb(155, 243, 192);
+//   text-align: center;
+//   margin: 30px;
+//   padding: 50px;
+//   overflow: hidden;
+// }
+.center {
+  text-align: center;
+}
+// h2 {
+//   padding: 30px;
+//   margin: 0px;
+//   background-color: #fff;
+// }
+
+// #score {
+//   display: none;
+// }
+// #questions {
+//   display: block;
+// }
+
+// button {
+//   background-color: rgb(122, 184, 148);
+//   color: white;
+// }
+// .form {
+//   margin: 0 auto;
+//   width: 210px;
+// }
+
+// .form input {
+//   display: block;
+//   text-align: left;
+//   float: right;
+//   height: 30px;
+// }
+// @media only screen and (max-width: 800px) {
+//   body {
+//     /* background-color: white; */
+//   }
+// }
