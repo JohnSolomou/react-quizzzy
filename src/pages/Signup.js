@@ -57,7 +57,7 @@ export default class SignUp extends Component {
                   onSubmit={this.handleSubmit}
                 >
                   <h1>
-                    Sign Up to To Do List
+                    Sign Up to To Quizzzy
                     {/* <Link className="title" to="/">
                       {" "}
                     </Link> */}

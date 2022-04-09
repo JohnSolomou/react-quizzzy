@@ -3,7 +3,7 @@
 // src/component/Header.js
 import React from "react";
 import { Link } from "react-router-dom";
-import smlogo from "../img/smlogo.png";
+import qlogo from "../img/qlogo.png";
 import { getAuth } from "firebase/auth";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/styles.css";
@@ -68,14 +68,14 @@ function Header() {
               </button>
             </div>
           ) : (
-            <div className="navbar-nav">
+            <div className="navbar-nav m-2 ">
               <Link className="navbar-brand " to="/">
-                <img src={smlogo} alt="logo" />
+                <img src={qlogo} alt="logo" />
               </Link>
-              <Link className="nav-item nav-link" to="/login">
+              <Link className="nav-item nav-link  center" to="/login">
                 Sign In
               </Link>
-              <Link className="nav-item nav-link" to="/signup">
+              <Link className="nav-item nav-link center" to="/signup">
                 Sign Up
               </Link>
             </div>

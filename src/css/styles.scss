@@ -1,6 +1,5 @@
 body {
-  background-color: rgb(122, 184, 148);
-
+  background-color: #68c2e8;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -31,18 +30,18 @@ body {
   width: 200px;
 }
 
-.todo-item {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  /* padding: 30px 20px 0; */
-  // width: 100%;
-  border-bottom: 1px solid #cecece;
-  font-family: sans-serif;
-  font-weight: 100;
-  font-size: 15px;
-  color: #333333;
-}
+// .todo-item {
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   /* padding: 30px 20px 0; */
+//   // width: 100%;
+//   border-bottom: 1px solid #cecece;
+//   font-family: sans-serif;
+//   font-weight: 100;
+//   font-size: 15px;
+//   color: #333333;
+// }
 
 input[type="checkbox"] {
   margin-right: 10px;
@@ -57,8 +56,8 @@ input[type="checkbox"]:focus {
   margin-top: 120px;
   max-width: 600px;
   height: 320px;
-  border: 1px solid #08c7ad;
-  background-color: #08c7ad;
+  border: 1px solid #68c2e8;
+  background-color: #68c2e8;
 }
 #login .container #login-row #login-column #login-box #login-form {
   padding: 20px;
@@ -77,17 +76,21 @@ div.row {
   min-width: 300px;
 }
 
-.color {
-  margin: 0 auto;
-  @include linearGradient(#0cadbd, #ddd);
-}
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 .primary-color {
-  background-color: rgb(122, 184, 148);
+  background-color: #68c2e8;
   color: white;
 }
 
+.invert {
+  // position: absolute;
+  height: 75%;
+  // width: 100%;
+  // left: 0;
+  // top: 0;
+  transform: rotate(180deg);
+}
 // body {
 //   font-family: sans-serif;
 //   overflow-x: hidden;
@@ -99,12 +102,12 @@ div.row {
 // p {
 //   margin: 0px 70px 0px 70px;
 // }
-.smlogo {
-  margin:auto
-  max-width: 10%;
-}
+// .smlogo {
+//   margin: auto;
+//   max-width: 10%;
+// }
 .hero {
-  background-color: rgb(122, 184, 148);
+  background-color: #68c2e8;
 
   color: #fff;
   display: block;
@@ -117,58 +120,58 @@ div.row {
 .btns {
   float: right;
   padding: 14px 16px;
-  background-color: rgb(122, 184, 148);
+  background-color: #68c2e8;
   color: #fff;
 }
-// button:hover {
-//   background-color: rgb(155, 243, 192);
-// }
+button:hover {
+  background-color: rgb(155, 230, 243);
+}
 // .btns a {
 //   color: #fff;
 //   text-decoration: none;
 // }
 
-// ul {
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-//   background-color: #333;
-// }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
 
-// li {
-//   float: right;
-//   display: inline;
-//   margin-top: 10px;
-// }
+li {
+  float: right;
+  display: inline;
+  margin-top: 10px;
+}
 
-// li a {
-//   display: inline;
-//   text-align: center;
-//   padding: 14px 16px;
-//   text-decoration: none;
-//   color: #fff;
-//   background-color: rgb(122, 184, 148);
-// }
+li a {
+  display: inline;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #68c2e8;
+}
 
 svg {
   display: block;
 }
-// .nav button {
-//   margin-top: 15px;
-// }
-// h1 .lside {
-//   margin-top: 90px;
-//   width: 46%;
-//   float: left;
-//   /* color: white; */
-// }
+.nav button {
+  margin-top: 15px;
+}
+h1 .lside {
+  margin-top: 90px;
+  width: 46%;
+  float: left;
+  /* color: white; */
+}
 // .lh {
 //   line-height: 01.6;
 // }
 
 .rside {
   margin-right: 0;
-  float: right;
+
   display: inline-block;
   width: 36%;
   background-color: rgb(122, 184, 148);
@@ -184,15 +187,18 @@ footer {
   color: white;
 }
 
-// .question {
-//   background-color: rgb(155, 243, 192);
-//   text-align: center;
-//   margin: 30px;
-//   padding: 50px;
-//   overflow: hidden;
-// }
+.question {
+  background-color: rgb(155, 243, 192);
+  text-align: center;
+  margin: 30px;
+  padding: 50px;
+  overflow: hidden;
+}
 .center {
   text-align: center;
+  justify-content: center;
+  margin-top: 25px;
+  padding-top: 100px;
 }
 // h2 {
 //   padding: 30px;
@@ -207,10 +213,10 @@ footer {
 //   display: block;
 // }
 
-// button {
-//   background-color: rgb(122, 184, 148);
-//   color: white;
-// }
+button {
+  background-color: rgb(122, 184, 148);
+  color: white;
+}
 // .form {
 //   margin: 0 auto;
 //   width: 210px;

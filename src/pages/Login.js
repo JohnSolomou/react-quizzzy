@@ -57,7 +57,7 @@ export default class Login extends Component {
                   onSubmit={this.handleSubmit}
                 >
                   <h1>
-                    Login to To Do List
+                    Login to To Quizzzy
                     {/* <Link className="title" to="/"> </Link> */}
                   </h1>
                   <p className="lead">
