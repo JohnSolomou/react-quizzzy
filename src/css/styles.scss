@@ -114,9 +114,19 @@ div.row {
   margin-top: 20px;
   margin-left: 100px;
 }
-// .white {
-//   background-color: white;
-// }
+.hero-title {
+  padding: 50px;
+}
+.hero-desc {
+  padding: 0 0px 40px 50px;
+}
+.hero-login {
+  text-align: center;
+}
+
+text {
+  color: white;
+}
 .btns {
   float: right;
   padding: 14px 16px;
@@ -155,6 +165,7 @@ li a {
 
 svg {
   display: block;
+  z-index: -5;
 }
 .nav button {
   margin-top: 15px;
@@ -184,7 +195,9 @@ h1 .lside {
 }
 footer {
   text-align: center;
-  color: white;
+  color: green;
+  font-weight: bold;
+  z-index: 20;
 }
 
 .question {
@@ -199,6 +212,9 @@ footer {
   justify-content: center;
   margin-top: 25px;
   padding-top: 100px;
+}
+.distance {
+  text-align: center;
 }
 // h2 {
 //   padding: 30px;
