@@ -118,13 +118,6 @@ button:hover {
   background-color: #9be6f3;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333;
-}
-
 li {
   float: right;
   display: inline;
@@ -202,5 +195,13 @@ footer {
 button {
   background-color: #7ab894;
   color: white;
+  max-width: 100px;
+  max-height: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=styles.css.map */

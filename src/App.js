@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Profile from "./pages/Quizzzy";
+import Quizzzy from "./pages/Quizzzy";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { getAuth } from "firebase/auth";
@@ -75,9 +75,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <PrivateRoute
-            path="/profile"
+            path="/Quizzzy"
             authenticated={this.state.authenticated}
-            component={Profile}
+            component={Quizzzy}
           ></PrivateRoute>
           <PublicRoute
             path="/signup"

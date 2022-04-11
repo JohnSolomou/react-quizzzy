@@ -150,72 +150,26 @@ export default class Quizzzy extends Component {
         <div>
           Login in as: <strong>{this.state.user.email}</strong>
         </div>
-        <div className="row">
-          <input
-            required
-            type="text"
-            name="name"
-            id="name"
-            placeholder="add a todo "
-            onChange={(e) => this.handleChange(e)}
-          />
-          <input
-            required
-            type="text"
-            name="location"
-            id="location"
-            placeholder="add location "
-            onChange={(e) => this.handleChange(e)}
-          />
+        <div class="center">
+          <h1 class="primary-color">Create yor quiz here.</h1>
         </div>
-        <div className="row">
-          <button
-            className="btn btn-success"
-            type="button"
-            onClick={(e) => this.submitData(e)}
-          >
-            Add to list
-          </button>
+        <div class="primary-color form">
+          <div>
+            <label for=""></label>
+            <textarea
+              placeholder="put your question here"
+              name=""
+              id="myTextarea"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <label for=""></label>
+          <input placeholder="answer" id="answer" name="answer" type="text" />
+          <button onclick="mySave()">Save</button>
+          <button onclick="done()">Done</button>
         </div>
-        <div className="row ">
-          {
-            // this.state.notes.length &&
-            this.state.notes.map((user) => {
-              return (
-                <div class="card todo-list color" key={this.state.notes.id}>
-                  <div class="card-body">
-                    <h5 class="card-title"> To Do Item</h5>
 
-                    <input type="checkbox" className="" />
-                    <p class="card-text">To Do: {user?.name}</p>
-
-                    <p class="card-text">Location: {user?.location}</p>
-
-                    <p class="card-text">Date:{user?.date}</p>
-                  </div>
-
-                  <div d-grid gap-2 d-md-flex justify-content-md-end>
-                    <button
-                      type="button"
-                      className="  justify-content-center btn-primary me-md-2"
-                      onClick={(e) => this.updateDoc(e, user.id)}
-                    >
-                      Update
-                    </button>
-                    <button
-                      justify-content-center
-                      type="button"
-                      className=" btn-danger "
-                      onClick={(e) => this.DeleteDoc(e, user.id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              );
-            })
-          }
-        </div>
         <Footer></Footer>
       </div>
     );

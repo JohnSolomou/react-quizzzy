@@ -7,7 +7,8 @@ body {
 .textwhite {
   color: white;
 }
-
+.navbar {
+}
 .todo-list {
   background-color: white;
   margin: auto;
@@ -141,12 +142,12 @@ button:hover {
 //   text-decoration: none;
 // }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333;
-}
+// ul {
+//   list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+//   background-color: #333;
+// }
 
 li {
   float: right;
@@ -232,6 +233,10 @@ footer {
 button {
   background-color: rgb(122, 184, 148);
   color: white;
+  max-width: 100px;
+  max-height: 50px;
+  justify-content: center;
+  align-items: center;
 }
 // .form {
 //   margin: 0 auto;

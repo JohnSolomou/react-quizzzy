@@ -44,20 +44,21 @@ function Header() {
         <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
           {auth.currentUser ? (
             <div className="navbar-nav">
-              <Link className="nav-item nav-link" to="/Quizzzy">
-                Go To List
-              </Link>
+              <Link className="nav-item nav-link" to="/Quizzzy"></Link>
               <ul class="navbar">
-                <a href="teacher.html">
+                <Link className="navbar-brand " to="/">
+                  <img src={qlogo} alt="logo" />
+                </Link>
+                <Link to="/Quizzzy">
                   <button class="btns">Teachers</button>
-                </a>
-                <a href="students.html">
+                </Link>
+                <Link to="/students">
                   <button class="btns">Students</button>
-                </a>
+                </Link>
                 <li>
-                  <a href="#home">
-                    <i class="fas fa-home-lg-alt primary-color"></i> Home
-                  </a>
+                  <Link to="/">
+                    <button>Home</button>
+                  </Link>
                 </li>
               </ul>
               <button
