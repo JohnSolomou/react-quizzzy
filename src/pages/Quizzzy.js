@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import firestore from "../firebase-config";
 import { getAuth } from "firebase/auth";
-
+// import UsersList from "../UsersList";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -150,12 +150,12 @@ export default class Quizzzy extends Component {
         <div>
           Login in as: <strong>{this.state.user.email}</strong>
         </div>
-        <div class="center">
-          <h1 class="primary-color">Create yor quiz here.</h1>
+        <div className="center">
+          <h1 className="primary-color">Create yor quiz here.</h1>
         </div>
-        <div class="primary-color form">
+        <div className="primary-color form">
           <div>
-            <label for=""></label>
+            <label></label>
             <textarea
               placeholder="put your question here"
               name=""
@@ -164,12 +164,15 @@ export default class Quizzzy extends Component {
               rows="10"
             ></textarea>
           </div>
-          <label for=""></label>
+          <label></label>
           <input placeholder="answer" id="answer" name="answer" type="text" />
-          <button onclick="mySave()">Save</button>
-          <button onclick="done()">Done</button>
+          {/* <button onClick= mySave()>Save</button>
+          <button onClick= one()>Done</button> */}
         </div>
-
+        <div>
+          <h2> Higher order component list of users</h2>
+          <div className="section">{/* <UsersList></UsersList> */}</div>
+        </div>
         <Footer></Footer>
       </div>
     );

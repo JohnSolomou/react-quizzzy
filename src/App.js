@@ -33,11 +33,7 @@ function PublicRoute({ component: Component, authenticated, ...rest }) {
     <Route
       {...rest}
       render={(props) =>
-        authenticated === false ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to="/profile" />
-        )
+        authenticated === false ? <Component {...props} /> : <Redirect to="/" />
       }
     />
   );

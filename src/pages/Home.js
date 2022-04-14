@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
 import "bootstrap/dist/css/bootstrap.css";
 import plane from "../img/paper_plane_with_trail.png";
 import globe from "../img/earth.png";
@@ -9,7 +10,7 @@ import phone from "../img/person_holding_phone.png";
 import people from "../img/people_at_home.png";
 import around_globe from "../img/people_around_globe.png";
 import "../css/styles.css";
-export default class HomePage extends Component {
+export default class Home extends Component {
   render() {
     return (
       <div data-testid="home-1">
@@ -51,20 +52,20 @@ export default class HomePage extends Component {
               </div>
             </div>
             <div className="hero-section-right col">
-              <img class="" src={teachers} width="90%" alt="" />
+              <img className="" src={teachers} width="90%" alt="" />
             </div>
           </div>
         </div>
 
         <div className="scaling-svg-container">
           <svg
-            class="invert"
+            className="invert"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 310"
           >
             <path
               fill="#68c2e8"
-              fill-opacity="1"
+              fillOpacity="1"
               d="M0,288L48,245.3C96,203,192,117,288,80C384,43,480,53,576,96C672,139,768,213,864,240C960,267,1056,245,1152,197.3C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             ></path>
           </svg>
@@ -72,10 +73,10 @@ export default class HomePage extends Component {
         {/* <img class="center" src={teachers} width="50%" alt="" /> */}
 
         <div className="container">
-          <h2 class="distance ">Using Quizzzy for Distance Learning</h2>
+          <h2 className="distance ">Using Quizzzy for Distance Learning</h2>
         </div>
 
-        <section class="center">
+        <section className="center">
           <div className="container">
             <div className="row">
               <div className="col">

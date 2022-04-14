@@ -45,28 +45,28 @@ function Header() {
           {auth.currentUser ? (
             <div className="navbar-nav">
               <Link className="nav-item nav-link" to="/Quizzzy"></Link>
-              <ul class="navbar">
+              <ul className="navbar">
                 <Link className="navbar-brand " to="/">
                   <img src={qlogo} alt="logo" />
                 </Link>
                 <Link to="/Quizzzy">
-                  <button class="btns">Teachers</button>
+                  <button className="btns">Teachers</button>
                 </Link>
-                <Link to="/students">
-                  <button class="btns">Students</button>
+                <Link to="/Students">
+                  <button className="btns">Students</button>
                 </Link>
-                <li>
-                  <Link to="/">
-                    <button>Home</button>
-                  </Link>
-                </li>
+
+                <Link to="/">
+                  <button className="btns">Home</button>
+                </Link>
+
+                <button
+                  className=" btn-outline-dark "
+                  onClick={() => auth.signOut()}
+                >
+                  Logout
+                </button>
               </ul>
-              <button
-                className=" btn-outline-dark "
-                onClick={() => auth.signOut()}
-              >
-                Logout
-              </button>
             </div>
           ) : (
             <div className="navbar-nav m-2 ">
