@@ -184,7 +184,6 @@ footer {
 button {
   background-color: #7ab894;
   color: white;
-  max-width: 100px;
   max-height: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
