@@ -1,14 +1,19 @@
 import React, { useRef, useState } from "react";
-import { Card, Button, Form, Alert } from "react-bootstrap";
+import { Card, Button, Form, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
-
+// import qlogo from "../img/qlogo.png";
+import Footer from "../components/Footer";
+import { Link, useHistory } from "react-router-dom";
+import Head from "../components/Header";
+// import Header from "../components/Header";
 export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { Signup } = useAuth;
+  const { signup } = useAuth();
   const [error, setError] = useState("");
-  const [Loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -18,49 +23,74 @@ export default function Signup() {
     try {
       setError("");
       setLoading(true);
-      await Signup(emailRef.current.value, passwordRef.current.value);
+      await signup(emailRef.current.value, passwordRef.current.value);
+      history.push("/");
     } catch {
       setError("Failed to create an account");
     }
     setLoading(false);
   }
   return (
-    <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" required ref={emailRef}></Form.Control>
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                required
-                ref={passwordRef}
-              ></Form.Control>
-            </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
-                type="password"
-                required
-                ref={passwordConfirmRef}
-              ></Form.Control>
-            </Form.Group>
-            <Button disabled={Loading} className="w-100" type="submit">
-              Sign Up
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? Log In
-      </div>
-    </>
+    <div>
+      <Head />
+      {/* <div>
+        <Link className="navbar-brand " to="/">
+          <img src={qlogo} alt="logo" />
+        </Link>
+      </div> */}
+      <Container
+        className="d-flex align-items-center justify-content-center"
+        style={{ minHeight: "60vh" }}
+      >
+        <div>
+          <Card style={{ minWidth: "500px", minHeight: "300px" }}>
+            <Card.Body>
+              <h2 className="text-center mb-4">Sign Up</h2>
+
+              {error && <Alert variant="danger">{error}</Alert>}
+              <Form onSubmit={handleSubmit}>
+                <Form.Group id="email">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    required
+                    ref={emailRef}
+                  ></Form.Control>
+                </Form.Group>
+                <Form.Group id="password">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    required
+                    ref={passwordRef}
+                  ></Form.Control>
+                </Form.Group>
+                <Form.Group id="password-confirm">
+                  <Form.Label>Password Confirmation</Form.Label>
+                  <Form.Control
+                    type="password"
+                    required
+                    ref={passwordConfirmRef}
+                  ></Form.Control>
+                </Form.Group>
+                <Button
+                  disabled={loading}
+                  style={{ marginTop: "20px" }}
+                  className="w-100"
+                  type="submit"
+                >
+                  Sign Up
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+          <div className="w-100 text-center mt-2">
+            Already have an account? <Link to="/login"> Log In</Link>
+          </div>
+        </div>
+      </Container>
+      <Footer></Footer>
+    </div>
   );
 }
 

@@ -1,110 +1,101 @@
-// import React, { Component } from "react";
-// import Header from "../components/Header";
-// import Footer from "../components/Footer";
-// import "bootstrap/dist/css/bootstrap.css";
-// import plane from "../img/paper_plane_with_trail.png";
-// import globe from "../img/earth.png";
-// import teachers from "../img/teachers.jpg";
-// import phone from "../img/person_holding_phone.png";
-// import people from "../img/people_at_home.png";
-// import around_globe from "../img/people_around_globe.png";
-// import "../css/styles.css";
-// export default class Home extends Component {
-//   render() {
-//     return (
-//       <div data-testid="home-1">
-//         <Header />
+import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import plane from "../img/paper_plane_with_trail.png";
+import globe from "../img/earth.png";
+import teachers from "../img/teachers.jpg";
+import phone from "../img/person_holding_phone.png";
+import people from "../img/people_at_home.png";
+import around_globe from "../img/people_around_globe.png";
+import "../css/styles.css";
+import "bootstrap/dist/css/bootstrap.css";
+export default function Home() {
+  return (
+    <div>
+      <Header />
+      <div data-testid="home-1">
+        {/* <Header /> */}
 
-//         <div className=" plain container-fluid primary-color">
-//           <div className="  row">
-//             <div className=" col ">
-//               <div className="hero-title ">
-//                 <h1>engage everyone, </h1>
-//                 <h1>everywhere</h1>
-//               </div>
-//               <div className="hero-desc  ">
-//                 <h4>Free Quiz tool to teach and learn anything,</h4>
-//                 <h4> on any device, in‑person or remotely.</h4>
-//               </div>
-//               <div className=" ">
-//                 {/* <button className="">
-//                   Get Started <i className="fas fa-arrow-right"></i>
-//                 </button> */}
-//               </div>
-//               <div className="hero-login ">
-//                 <p>
-//                   Don't have an account?
-//                   <a className="btn btn-primary" href="/Signup" role="button">
-//                     Sign Up
-//                   </a>
-//                 </p>
-//               </div>
-//               <div className="section-footer ">
-//                 <div className="globe-image">
-//                   <img src={globe} alt="globe" />
-//                   Used by more than 5 million students in schools, homes, and
-//                   offices around the world.
-//                 </div>
-//               </div>
-//               <div className="plane plane-center">
-//                 <img src={plane} alt="" />
-//               </div>
-//             </div>
-//             <div className="hero-section-right col">
-//               <img className="" src={teachers} width="90%" alt="" />
-//             </div>
-//           </div>
-//         </div>
+        <div className=" plain container-fluid primary-color">
+          <div className="  row">
+            <div className=" col ">
+              <div className="hero-title ">
+                <h1>engage everyone, </h1>
+                <h1>everywhere</h1>
+              </div>
 
-//         <div className="scaling-svg-container">
-//           <svg
-//             className="invert"
-//             xmlns="http://www.w3.org/2000/svg"
-//             viewBox="0 0 1440 310"
-//           >
-//             <path
-//               fill="#68c2e8"
-//               fillOpacity="1"
-//               d="M0,288L48,245.3C96,203,192,117,288,80C384,43,480,53,576,96C672,139,768,213,864,240C960,267,1056,245,1152,197.3C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-//             ></path>
-//           </svg>
-//         </div>
+              <div className="hero-desc  ">
+                <h4>Free Quiz tool to teach and learn anything,</h4>
+                <h4> on any device, in‑person or remotely.</h4>
+              </div>
+              <div className=" "></div>
+              <div className="hero-login ">
+                <p>
+                  Don't have an account?
+                  <a className="btn btn-primary" href="/Signup" role="button">
+                    Sign Up
+                  </a>
+                </p>
+              </div>
+              <div className="section-footer ">
+                <div className="globe-image">
+                  <img src={globe} alt="globe" />
+                  Used by more than 5 million students in schools, homes, and
+                  offices around the world.
+                </div>
+              </div>
+              <div className="plane plane-center">
+                <img src={plane} alt="" />
+              </div>
+            </div>
+            <div className="hero-section-right col">
+              <img className="" src={teachers} width="90%" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="scaling-svg-container">
+          <svg
+            className="invert"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 310"
+          >
+            <path
+              fill="#68c2e8"
+              fillOpacity="1"
+              d="M0,288L48,245.3C96,203,192,117,288,80C384,43,480,53,576,96C672,139,768,213,864,240C960,267,1056,245,1152,197.3C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </div>
+        <div className="container">
+          <h2 className="distance ">Using Quizzzy for Distance Learning</h2>
+        </div>
+        <section className="center">
+          <div className="container">
+            <div className="row">
+              <div className="col">
+                <img src={phone} alt="person holding phone" />
+                <div>
+                  <h4>Students ALWAYS see questions on their own screen.</h4>
+                </div>
+              </div>
+              <div className="col">
+                <img src={people} alt="people at home" />
+                <div>
+                  <h4>
+                    Bring people together (apart) with live quizzes and polls.
+                  </h4>
+                </div>
+              </div>
+              <div className="col">
+                <img src={around_globe} alt="" />
+                <div>
+                  <h4>Assign quizzes and engage families on their own time.</h4>
+                </div>
+              </div>
+            </div>
+          </div>
 
-//         <div className="container">
-//           <h2 className="distance ">Using Quizzzy for Distance Learning</h2>
-//         </div>
-
-//         <section className="center">
-//           <div className="container">
-//             <div className="row">
-//               <div className="col">
-//                 <img src={phone} alt="person holding phone" />
-//                 <div>
-//                   <h4>Students ALWAYS see questions on their own screen.</h4>
-//                 </div>
-//               </div>
-//               <div className="col">
-//                 <img src={people} alt="people at home" />
-//                 <div>
-//                   <h4>
-//                     Bring people together (apart) with live quizzes and polls.
-//                   </h4>
-//                 </div>
-//               </div>
-//               <div className="col">
-//                 <img src={around_globe} alt="" />
-//                 <div>
-//                   <h4>Assign quizzes and engage families on their own time.</h4>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-{
-  /* <img class="globe" src={globe} alt="" /> */
-}
-{
-  /* <div className="row">
+          <div className="row">
             <div className="col">
               <h2>Quiz creator 101: where to start? </h2>
               <p>
@@ -141,12 +132,10 @@
                 placement quiz to find your learner's Goldilocks zone.
               </p>
             </div>
-          </div>  */
+          </div>
+        </section>
+        <Footer></Footer>
+      </div>
+    </div>
+  );
 }
-//         </section>
-
-//         <Footer></Footer>
-//       </div>
-//     );
-//   }
-// }
