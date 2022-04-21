@@ -1,12 +1,39 @@
-// src/pages/Quizzzy.js
-// import React, { Component } from "react";
-// import Header from "../components/Header";
-// import Footer from "../components/Footer";
-// import firestore from "../firebase-config";
+// src/pages/CreateQuiz.js
+import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
 // import { getAuth } from "firebase/auth";
-// // import UsersList from "../UsersList";
-// import "bootstrap/dist/css/bootstrap.css";
-// import "bootstrap/dist/js/bootstrap.min.js";
+// import UsersList from "../UsersList";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+
+export default function CreateQuiz() {
+  return (
+    <div>
+      <Header />
+
+      <div className="primary-color center form">
+        <div>
+          <h1 className="primary-color">Create yor quiz here.</h1>
+          <textarea
+            placeholder="put your question here"
+            name=""
+            id="myTextarea"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+
+        <input placeholder="answer" id="answer" name="answer" type="text" />
+        {/* <button onClick= mySave()>Save</button>
+           <button onClick= one()>Done</button> */}
+      </div>
+
+      <Footer />
+    </div>
+  );
+}
 
 // export default class Quizzzy extends Component {
 //   constructor() {

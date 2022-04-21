@@ -1,15 +1,26 @@
 // Our <Header> component also render different links depending on the authenticated state.
 
 // src/component/Header.js
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import qlogo from "../img/qlogo.png";
-import { getAuth } from "firebase/auth";
+import { Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/styles.css";
-
+import { useAuth } from "../context/AuthContext";
 function Header() {
-  const auth = getAuth();
+  const [error, setError] = useState("");
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
+  async function handleLogout() {
+    setError("");
+    try {
+      await logout();
+      history.push("/");
+    } catch (error) {
+      setError("Failed to log out");
+    }
+  }
   return (
     <header className="">
       <nav
@@ -27,16 +38,17 @@ function Header() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
-          {auth.currentUser ? (
+          {currentUser ? (
             <div className="navbar-nav">
               {/* <Link className="nav-item nav-link" to="/Quizzzy"></Link> */}
               <ul className="navbar">
                 <Link className="navbar-brand " to="/">
                   <img src={qlogo} alt="logo" />
                 </Link>
-                <Link to="/Quizzzy">
-                  <button className="btns">Teachers</button>
+                <Link to="/CreateQuiz">
+                  <button className="btns">Create Quiz</button>
                 </Link>
                 <Link to="/Students">
                   <button className="btns">Students</button>
@@ -47,11 +59,16 @@ function Header() {
                 </Link>
 
                 <button
-                  className=" btn-outline-dark "
-                  onClick={() => auth.signOut()}
+                  className=" btns btn-outline-dark "
+                  onClick={handleLogout}
                 >
                   Logout
                 </button>
+                <div className="m-4">
+                  <strong>Signed in as : </strong>
+                  {currentUser.email}
+                  {error && <Alert variant="danger">{error}</Alert>}
+                </div>
               </ul>
             </div>
           ) : (

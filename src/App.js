@@ -4,7 +4,10 @@ import { AuthProvider } from "./context/AuthContext";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import CreateQuiz from "./pages/CreateQuiz";
+import PrivateRoute from "./pages/PrivateRoute";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import PublicRoute from "./pages/PublicRoute";
 export default function App() {
   return (
     // <Container
@@ -15,9 +18,18 @@ export default function App() {
       <Router>
         <AuthProvider>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Home}></Route>
+            <PrivateRoute
+              path="/CreateQuiz"
+              component={CreateQuiz}
+            ></PrivateRoute>
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
+            {/* <PrivateRoute>
+              <Route exact path="/" component={Home} />
+            </PrivateRoute>
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} /> */}
           </Switch>
         </AuthProvider>
       </Router>
