@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
-import "bootstrap/dist/css/bootstrap.css";
 import plane from "../img/paper_plane_with_trail.png";
 import globe from "../img/earth.png";
 import teachers from "../img/teachers.jpg";
@@ -10,11 +8,15 @@ import phone from "../img/person_holding_phone.png";
 import people from "../img/people_at_home.png";
 import around_globe from "../img/people_around_globe.png";
 import "../css/styles.css";
-export default class Home extends Component {
-  render() {
-    return (
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+export default function Home() {
+  return (
+    <div>
+      <Header />
+
       <div data-testid="home-1">
-        <Header></Header>
+        {/* <Header /> */}
 
         <div className=" plain container-fluid primary-color">
           <div className="  row">
@@ -23,15 +25,12 @@ export default class Home extends Component {
                 <h1>engage everyone, </h1>
                 <h1>everywhere</h1>
               </div>
+
               <div className="hero-desc  ">
                 <h4>Free Quiz tool to teach and learn anything,</h4>
                 <h4> on any device, in‑person or remotely.</h4>
               </div>
-              <div className=" ">
-                {/* <button className="">
-                  Get Started <i className="fas fa-arrow-right"></i>
-                </button> */}
-              </div>
+              <div className=" "></div>
               <div className="hero-login ">
                 <p>
                   Don't have an account?
@@ -56,7 +55,6 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-
         <div className="scaling-svg-container">
           <svg
             className="invert"
@@ -70,12 +68,9 @@ export default class Home extends Component {
             ></path>
           </svg>
         </div>
-        {/* <img class="center" src={teachers} width="50%" alt="" /> */}
-
         <div className="container">
           <h2 className="distance ">Using Quizzzy for Distance Learning</h2>
         </div>
-
         <section className="center">
           <div className="container">
             <div className="row">
@@ -102,8 +97,7 @@ export default class Home extends Component {
             </div>
           </div>
 
-          {/* <img class="globe" src={globe} alt="" /> */}
-          {/* <div className="row">
+          <div className="row">
             <div className="col">
               <h2>Quiz creator 101: where to start? </h2>
               <p>
@@ -140,11 +134,10 @@ export default class Home extends Component {
                 placement quiz to find your learner's Goldilocks zone.
               </p>
             </div>
-          </div>  */}
+          </div>
         </section>
-
         <Footer></Footer>
       </div>
-    );
-  }
+    </div>
+  );
 }

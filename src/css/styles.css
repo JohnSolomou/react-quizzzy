@@ -32,15 +32,6 @@ body {
   width: 200px;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
-  font-size: 30px;
-}
-
-input[type="checkbox"]:focus {
-  outline: 0;
-}
-
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
@@ -193,7 +184,6 @@ footer {
 button {
   background-color: #7ab894;
   color: white;
-  max-width: 100px;
   max-height: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;

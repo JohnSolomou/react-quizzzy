@@ -1,35 +1,32 @@
 // Our <Header> component also render different links depending on the authenticated state.
 
 // src/component/Header.js
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import qlogo from "../img/qlogo.png";
-import { getAuth } from "firebase/auth";
+import { Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/styles.css";
-
+import { useAuth } from "../context/AuthContext";
 function Header() {
-  const auth = getAuth();
+  const [error, setError] = useState("");
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
+  async function handleLogout() {
+    setError("");
+    try {
+      await logout();
+      history.push("/");
+    } catch (error) {
+      setError("Failed to log out");
+    }
+  }
   return (
     <header className="">
       <nav
         data-testid="header-1"
         className="navbar navbar-expand-md navbar-light  "
       >
-        {/* <svg
-          class="primary-color"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 310"
-        >
-          <path
-            fill="#fff"
-            fill-opacity="1"
-            d="M0,288L48,245.3C96,203,192,117,288,80C384,43,480,53,576,96C672,139,768,213,864,240C960,267,1056,245,1152,197.3C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path> </svg> */}
-
-        {/* <Link className="navbar-brand m-2" to="/">
-          HomePage
-        </Link> */}
         <button
           className="navbar-toggler "
           type="button"
@@ -41,16 +38,17 @@ function Header() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
-          {auth.currentUser ? (
+          {currentUser ? (
             <div className="navbar-nav">
-              <Link className="nav-item nav-link" to="/Quizzzy"></Link>
+              {/* <Link className="nav-item nav-link" to="/Quizzzy"></Link> */}
               <ul className="navbar">
                 <Link className="navbar-brand " to="/">
                   <img src={qlogo} alt="logo" />
                 </Link>
-                <Link to="/Quizzzy">
-                  <button className="btns">Teachers</button>
+                <Link to="/CreateQuiz">
+                  <button className="btns">Create Quiz</button>
                 </Link>
                 <Link to="/Students">
                   <button className="btns">Students</button>
@@ -61,11 +59,16 @@ function Header() {
                 </Link>
 
                 <button
-                  className=" btn-outline-dark "
-                  onClick={() => auth.signOut()}
+                  className=" btns btn-outline-dark "
+                  onClick={handleLogout}
                 >
                   Logout
                 </button>
+                <div className="m-4">
+                  <strong>Signed in as : </strong>
+                  {currentUser.email}
+                  {error && <Alert variant="danger">{error}</Alert>}
+                </div>
               </ul>
             </div>
           ) : (
