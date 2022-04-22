@@ -4,7 +4,9 @@ import { AuthProvider } from "./context/AuthContext";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import ForgotPassword from "./ForgotPassword";
 import CreateQuiz from "./pages/CreateQuiz";
+import TakeQuiz from "./pages/TakeQuiz";
 import PrivateRoute from "./pages/PrivateRoute";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import PublicRoute from "./pages/PublicRoute";
@@ -19,12 +21,11 @@ export default function App() {
         <AuthProvider>
           <Switch>
             <Route exact path="/" component={Home}></Route>
-            <PrivateRoute
-              path="/CreateQuiz"
-              component={CreateQuiz}
-            ></PrivateRoute>
+            <PrivateRoute path="/CreateQuiz" component={CreateQuiz} />
+            <PrivateRoute path="/TakeQuiz" component={TakeQuiz} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
+            <Route path="/forgot-password" component={ForgotPassword} />
             {/* <PrivateRoute>
               <Route exact path="/" component={Home} />
             </PrivateRoute>

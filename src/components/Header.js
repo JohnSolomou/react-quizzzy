@@ -50,8 +50,8 @@ function Header() {
                 <Link to="/CreateQuiz">
                   <button className="btns">Create Quiz</button>
                 </Link>
-                <Link to="/Students">
-                  <button className="btns">Students</button>
+                <Link to="/TakeQuiz">
+                  <button className="btns">Take Quiz</button>
                 </Link>
 
                 <Link to="/">

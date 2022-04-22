@@ -1,7 +1,6 @@
 // src/pages/CreateQuiz.js
 import React from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 // import { getAuth } from "firebase/auth";
 // import UsersList from "../UsersList";
@@ -13,7 +12,7 @@ export default function CreateQuiz() {
     <div>
       <Header />
 
-      <div className="primary-color center form">
+      <div style={{ minHeight: "900px" }} className="primary-color center form">
         <div>
           <h1 className="primary-color">Create yor quiz here.</h1>
           <textarea
@@ -26,11 +25,9 @@ export default function CreateQuiz() {
         </div>
 
         <input placeholder="answer" id="answer" name="answer" type="text" />
-        {/* <button onClick= mySave()>Save</button>
-           <button onClick= one()>Done</button> */}
+        <button>Save</button>
+        <button>Done</button>
       </div>
-
-      <Footer />
     </div>
   );
 }
