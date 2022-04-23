@@ -9,7 +9,7 @@ import people from "../img/people_at_home.png";
 import around_globe from "../img/people_around_globe.png";
 import "../css/styles.css";
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+
 export default function Home() {
   return (
     <div>
