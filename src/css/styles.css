@@ -192,4 +192,22 @@ button {
       -ms-flex-align: center;
           align-items: center;
 }
+
+@media only screen and (max-width: 600px) {
+  .plane {
+    display: none;
+  }
+  .teachers {
+    display: inline-block;
+  }
+  .signin {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .m-right {
+    padding-left: 20px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

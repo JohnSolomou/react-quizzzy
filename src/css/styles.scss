@@ -254,3 +254,18 @@ button {
 //     /* background-color: white; */
 //   }
 // }
+@media only screen and (max-width: 600px) {
+  .plane {
+    display: none;
+  }
+  .teachers {
+    display: inline-block;
+  }
+  .signin {
+    text-align: center;
+    justify-content: center;
+  }
+  .m-right {
+    padding-left: 20px;
+  }
+}

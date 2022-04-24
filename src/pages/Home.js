@@ -28,7 +28,7 @@ export default function Home() {
 
               <div className="hero-desc  ">
                 <h4>Free Quiz tool to teach and learn anything,</h4>
-                <h4> on any device, in‑person or remotely.</h4>
+                <h4> on any device, in-person or remotely.</h4>
               </div>
               <div className=" "></div>
               <div className="hero-login ">
@@ -47,11 +47,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="plane plane-center">
-                <img src={plane} alt="" />
+                <img className="plane" src={plane} alt="" />
               </div>
             </div>
             <div className="hero-section-right col">
-              <img className="" src={teachers} width="90%" alt="" />
+              <img className="teachers" src={teachers} width="90%" alt="" />
             </div>
           </div>
         </div>
