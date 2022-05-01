@@ -193,12 +193,37 @@ button {
           align-items: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .plane {
     display: none;
   }
   .teachers {
-    display: inline-block;
+    width: 600px;
+  }
+  .signin {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .m-right {
+    padding-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .plane {
+    display: none;
+  }
+  img.teachers {
+    padding: 0 0 0 40px;
+    width: 350px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .signin {
     text-align: center;

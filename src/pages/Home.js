@@ -51,7 +51,12 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-section-right col">
-              <img className="teachers" src={teachers} width="90%" alt="" />
+              <img
+                className="teachers  px-6"
+                src={teachers}
+                width="90%"
+                alt=""
+              />
             </div>
           </div>
         </div>
