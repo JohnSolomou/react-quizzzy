@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "../components/Header";
 export default function Students() {
+  const [question, setQuestion] = useState("");
+  useEffect(() => {
+    (async () => {
+      const response = await fetch("http://localhost:3000/api/v1/quiz/2").then(
+        (res) => res.json()
+      );
+      setQuestion(response[0].questions);
+    })();
+  }, []);
+
   return (
     <div>
       <Head></Head>
@@ -8,7 +18,7 @@ export default function Students() {
         <div class="primary-color center">
           <h1 class="primary-color">Take your Quiz here.</h1>
           <h1 id="question" class="primary-color">
-            hello
+            {question}
           </h1>
         </div>
         <div id="question-details" class="primary-color center">
