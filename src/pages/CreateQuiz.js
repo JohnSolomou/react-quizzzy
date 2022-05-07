@@ -1,31 +1,60 @@
 // src/pages/CreateQuiz.js
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
-
+import axios from "axios";
 // import { getAuth } from "firebase/auth";
 // import UsersList from "../UsersList";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 export default function CreateQuiz() {
+  const [sent, setSent] = useState("false");
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
+  const handleSend = async () => {
+    setSent(true);
+    try {
+      await axios.post(`${process.env.REACT_APP_BACK_END_URL}/createQuiz`, {
+        question,
+        answer,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div>
       <Header />
 
       <div style={{ minHeight: "900px" }} className="primary-color center form">
-        <div>
-          <h1 className="primary-color">Create yor quiz here.</h1>
-          <textarea
-            placeholder="put your question here"
-            name=""
-            id="myTextarea"
-            cols="30"
-            rows="10"
-          ></textarea>
-        </div>
+        {" "}
+        {sent ? (
+          <form onSubmit={handleSend}>
+            <div>
+              <h1 className="primary-color">Create yor quiz here.</h1>
+              <textarea
+                placeholder="put your question here"
+                value={question}
+                id="myTextarea"
+                cols="30"
+                rows="10"
+                onChange={(e) => setQuestion(e.target.value)}
+              ></textarea>
+            </div>
 
-        <input placeholder="answer" id="answer" name="answer" type="text" />
-        <button>Save</button>
+            <input
+              placeholder="answer"
+              value={answer}
+              id="answer"
+              name="answer"
+              type="text"
+              onChange={(e) => setAnswer(e.target.value)}
+            />
+          </form>
+        ) : (
+          <h2>Question and answer sent</h2>
+        )}
+        <button type="submit">Submit</button>
         <button>Done</button>
       </div>
     </div>
