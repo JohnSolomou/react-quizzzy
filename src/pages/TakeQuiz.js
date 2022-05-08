@@ -14,7 +14,11 @@ export default function Students() {
   return (
     <div>
       <Head></Head>
-      <div style={{ minHeight: "900px" }} id="questions" class="primary-color">
+      <div
+        style={{ minHeight: "900px" }}
+        id="questions"
+        className="primary-color"
+      >
         <div className="primary-color center">
           <h1 className="primary-color">Take your Quiz here.</h1>
           <h1 id="question" className="primary-color">

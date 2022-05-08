@@ -1,35 +1,43 @@
 // src/pages/CreateQuiz.js
 import React, { useState } from "react";
 import Header from "../components/Header";
-import axios from "axios";
-// import { getAuth } from "firebase/auth";
-// import UsersList from "../UsersList";
+// import axios from "axios";
+
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 export default function CreateQuiz() {
-  const [sent, setSent] = useState("false");
+  const [sent, setSent] = useState(false);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const handleSend = async () => {
+  const handleSend = (e) => {
+    e.preventDefault();
+    const quiz = {
+      question,
+      answer,
+    };
     setSent(true);
-    try {
-      await axios.post(`${process.env.REACT_APP_BACK_END_URL}/createQuiz`, {
-        question,
-        answer,
-      });
-    } catch (error) {
-      console.log(error);
-    }
+
+    fetch(`http://localhost:4000/createQuiz`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quiz),
+    })
+      .then((res) => {
+        console.log(res.json());
+        console.log("new quiz created");
+      })
+      .catch((e) => console.log(e));
   };
   return (
     <div>
       <Header />
 
       <div style={{ minHeight: "900px" }} className="primary-color center form">
-        {" "}
-        {sent ? (
-          <form onSubmit={handleSend}>
+        {!sent ? (
+          <form>
             <div>
               <h1 className="primary-color">Create yor quiz here.</h1>
               <textarea
@@ -52,10 +60,12 @@ export default function CreateQuiz() {
             />
           </form>
         ) : (
-          <h2>Question and answer sent</h2>
+          <h2>Question and answer added</h2>
         )}
-        <button type="submit">Submit</button>
-        <button>Done</button>
+        <button type="submit" onClick={handleSend}>
+          Submit
+        </button>
+        <button>Next Question</button>
       </div>
     </div>
   );
