@@ -18,15 +18,16 @@ export default function CreateQuiz() {
     };
     setSent(true);
 
-    fetch(`http://localhost:4000/createQuiz`, {
+    fetch("http://localhost:4000/createQuiz", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify(quiz),
     })
-      .then((res) => {
-        console.log(res.json());
+      .then(() => {
+        // console.log(res.json());
         console.log("new quiz created");
       })
       .catch((e) => console.log(e));
@@ -37,7 +38,7 @@ export default function CreateQuiz() {
 
       <div style={{ minHeight: "900px" }} className="primary-color center form">
         {!sent ? (
-          <form>
+          <form onSubmit={handleSend}>
             <div>
               <h1 className="primary-color">Create yor quiz here.</h1>
               <textarea
