@@ -25,8 +25,11 @@ function Header() {
     <header className="">
       <nav
         data-testid="header-1"
-        className="navbar navbar-expand-md navbar-light  "
+        className="navbar navbar-expand-md navbar-light "
       >
+        <Link className="m-right " to="/">
+          <img src={qlogo} alt="logo" />
+        </Link>
         <button
           className="navbar-toggler "
           type="button"
@@ -36,22 +39,17 @@ function Header() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon "></span>
         </button>
-
         <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
           {currentUser ? (
             <div className="navbar-nav">
-              {/* <Link className="nav-item nav-link" to="/Quizzzy"></Link> */}
               <ul className="navbar">
-                <Link className="navbar-brand " to="/">
-                  <img src={qlogo} alt="logo" />
-                </Link>
                 <Link to="/CreateQuiz">
                   <button className="btns">Create Quiz</button>
                 </Link>
-                <Link to="/Students">
-                  <button className="btns">Students</button>
+                <Link to="/TakeQuiz">
+                  <button className="btns">Take Quiz</button>
                 </Link>
 
                 <Link to="/">
@@ -73,13 +71,10 @@ function Header() {
             </div>
           ) : (
             <div className="navbar-nav m-2 ">
-              <Link className="navbar-brand " to="/">
-                <img src={qlogo} alt="logo" />
-              </Link>
-              <Link className="nav-item nav-link  center" to="/login">
+              <Link className="nav-item nav-link signin" to="/login">
                 Sign In
               </Link>
-              <Link className="nav-item nav-link center" to="/signup">
+              <Link className="nav-item nav-link signin" to="/signup">
                 Sign Up
               </Link>
             </div>

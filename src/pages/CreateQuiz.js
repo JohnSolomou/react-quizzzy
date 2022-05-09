@@ -1,36 +1,73 @@
 // src/pages/CreateQuiz.js
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import axios from "axios";
 
-// import { getAuth } from "firebase/auth";
-// import UsersList from "../UsersList";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 export default function CreateQuiz() {
+  const [sent, setSent] = useState(false);
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
+  const handleSend = (e) => {
+    e.preventDefault();
+    const quiz = {
+      question,
+      answer,
+    };
+    setSent(true);
+
+    fetch("http://localhost:4000/createQuiz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(quiz),
+    })
+      .then(() => {
+        // console.log(res.json());
+        console.log("new quiz created");
+      })
+      .catch((e) => console.log(e));
+  };
   return (
     <div>
       <Header />
 
-      <div className="primary-color center form">
-        <div>
-          <h1 className="primary-color">Create yor quiz here.</h1>
-          <textarea
-            placeholder="put your question here"
-            name=""
-            id="myTextarea"
-            cols="30"
-            rows="10"
-          ></textarea>
-        </div>
+      <div style={{ minHeight: "900px" }} className="primary-color center form">
+        {!sent ? (
+          <form onSubmit={handleSend}>
+            <div>
+              <h1 className="primary-color">Create yor quiz here.</h1>
+              <textarea
+                placeholder="put your question here"
+                value={question}
+                id="myTextarea"
+                cols="30"
+                rows="10"
+                onChange={(e) => setQuestion(e.target.value)}
+              ></textarea>
+            </div>
 
-        <input placeholder="answer" id="answer" name="answer" type="text" />
-        {/* <button onClick= mySave()>Save</button>
-           <button onClick= one()>Done</button> */}
+            <input
+              placeholder="answer"
+              value={answer}
+              id="answer"
+              name="answer"
+              type="text"
+              onChange={(e) => setAnswer(e.target.value)}
+            />
+          </form>
+        ) : (
+          <h2>Question and answer added</h2>
+        )}
+        <button type="submit" onClick={handleSend}>
+          Submit
+        </button>
+        <button>Next Question</button>
       </div>
-
-      <Footer />
     </div>
   );
 }
