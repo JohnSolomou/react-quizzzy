@@ -4,7 +4,7 @@ export default function Students() {
   const [question, setQuestion] = useState("");
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://localhost:3000/quiz/2").then((res) =>
+      const response = await fetch("http://localhost:4000/quiz").then((res) =>
         res.json()
       );
       setQuestion(response[0].questions);
@@ -27,9 +27,9 @@ export default function Students() {
         </div>
         <div id="question-details" className="primary-color center">
           <input placeholder="answer" type="text" id="studentanswer" />
-          <button id="submit" onclick="nextQuestion()">
+          {/* <button id="submit" onClick="nextQuestion()">
             submit
-          </button>
+          </button> */}
           <span id="err"></span>
         </div>
       </div>

@@ -31,7 +31,7 @@ export default function CreateQuiz() {
         console.log("new quiz created");
       })
       .catch((e) => {
-        debugger;
+        // debugger;
         console.log("**** Error: ", e);
       });
   };
