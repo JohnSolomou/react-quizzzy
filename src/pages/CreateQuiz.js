@@ -1,8 +1,7 @@
 // src/pages/CreateQuiz.js
 import React, { useState } from "react";
 import Header from "../components/Header";
-// import axios from "axios";
-
+import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -10,6 +9,7 @@ export default function CreateQuiz() {
   const [sent, setSent] = useState(false);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
+  const history = useHistory();
   const handleSend = () => {
     // e.preventDefault();
     const quiz = {
@@ -27,13 +27,21 @@ export default function CreateQuiz() {
       .then((res) => res.json())
       .then(() => {
         // console.log(res.json());
-        setSent(true);
+        // setSent(true);
+        setQuestion("");
+        setAnswer("");
         console.log("new quiz created");
       })
       .catch((e) => {
         // debugger;
         console.log("**** Error: ", e);
       });
+  };
+  const handleQuizComplete = () => {
+    setSent(true);
+    setTimeout(() => {
+      history.push("/");
+    }, 3000);
   };
 
   return (
@@ -67,7 +75,9 @@ export default function CreateQuiz() {
             <button type="button" onClick={() => handleSend()}>
               Submit
             </button>
-            <button type="button">Next Question</button>
+            <button type="button" onClick={handleQuizComplete}>
+              Finished
+            </button>
           </form>
         ) : (
           <h2>Question and answer added</h2>

@@ -2,15 +2,25 @@ import React, { useEffect, useState } from "react";
 import Head from "../components/Header";
 export default function Students() {
   const [question, setQuestion] = useState("");
+  const [counter, setCounter] = useState(0);
+  const [questionCount, setQuestionCount] = useState(0);
   useEffect(() => {
     (async () => {
       const response = await fetch("http://localhost:4000/quiz").then((res) =>
         res.json()
       );
-      setQuestion(response[0].questions);
+      setQuestionCount(response.length);
+      if (questionCount - 1 >= counter && questionCount !== 0) {
+        setQuestion(response[counter].questions);
+        return;
+      }
+      alert("no more questions");
     })();
-  }, []);
+  }, [counter]);
 
+  const getNextQuestion = () => {
+    setCounter((counter) => counter + 1);
+  };
   return (
     <div>
       <Head></Head>
@@ -27,9 +37,9 @@ export default function Students() {
         </div>
         <div id="question-details" className="primary-color center">
           <input placeholder="answer" type="text" id="studentanswer" />
-          {/* <button id="submit" onClick="nextQuestion()">
+          <button id="submit" onClick={getNextQuestion}>
             submit
-          </button> */}
+          </button>
           <span id="err"></span>
         </div>
       </div>
